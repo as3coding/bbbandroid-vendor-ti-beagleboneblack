@@ -26,11 +26,22 @@ PRODUCT_COPY_FILES := \
 	device/ti/beagleboneblack/mixer_paths.xml:system/etc/mixer_paths.xml \
 	device/ti/beagleboneblack/audio_policy.conf:system/etc/audio_policy.conf
 
-
 # KeyPads
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
     $(LOCAL_PATH)/ti-tsc.idc:system/usr/idc/ti-tsc.idc
+
+# BBBAndroid - Since the users keep asking for GPIO key mappings for the
+# various LCDs (which enumerate in a variety of values), I'm just going
+# to copy the base one a bunch of times and hope for the best.
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gpio_keys_10.kl:system/usr/keylayout/gpio_keys_10.kl \
+    $(LOCAL_PATH)/gpio_keys_11.kl:system/usr/keylayout/gpio_keys_11.kl \
+    $(LOCAL_PATH)/gpio_keys_12.kl:system/usr/keylayout/gpio_keys_12.kl \
+    $(LOCAL_PATH)/gpio_keys_13.kl:system/usr/keylayout/gpio_keys_13.kl \
+    $(LOCAL_PATH)/gpio_keys_14.kl:system/usr/keylayout/gpio_keys_14.kl \
+    $(LOCAL_PATH)/gpio_keys_15.kl:system/usr/keylayout/gpio_keys_15.kl \
+    $(LOCAL_PATH)/gpio_keys_16.kl:system/usr/keylayout/gpio_keys_16.kl
 
 PRODUCT_PROPERTY_OVERRIDES := \
        hwui.render_dirty_regions=false
